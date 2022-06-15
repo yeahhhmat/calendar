@@ -32,6 +32,10 @@ const Hero = () => {
           <Heading>A Calendar SDK by @whilethiscompiles</Heading>
           <hr />
         </Prose>
+        {/* mb should match img height */}
+        <div className="relative mb-24">
+          <img src="./construction-unicode-1F3D7.svg" className="h-24 w-24 absolute right-2" />
+        </div>
         <Prose>
           <Heading root="h2">Road Map</Heading>
           <p>Here's the current road map. Working Toward's A Localized Tomorrow.</p>
@@ -60,7 +64,7 @@ const Hero = () => {
           </li>
         </ul>
         <Prose>
-          <p>At some point it'd be awesome to incorporate some UI Calendar Components in such a way that we could be presentable as a alternative to other popular open source services. We've got a long way to go before that! </p>
+          <p>At some point it'd be awesome to incorporate some UI Calendar Components in such a way that we could be presentable as a alternative to other popular open source services. We've got a long way to go before that! </p>          
         </Prose>
         <Prose>
           <Heading root="h2">Step 1. Install the SDK</Heading>
