@@ -1,6 +1,6 @@
 {
   "name": "root",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "prod:clean-install:calendar-tests": "cd ./lib/calendar-tests && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
     "prod:clean-install:developer": "cd ./lib/developer && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
