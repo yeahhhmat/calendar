@@ -1,4 +1,4 @@
-import {join} from "lodash";
+import {join} from 'lodash';
 
 const Heading = ({root, children, className, ...rest}) => {
   const rootElement = (root === 'h1' ? 'h1' : root === 'h2' ? 'h2' : root === 'h3' ? 'h3' : 'h1');
@@ -11,7 +11,7 @@ const Heading = ({root, children, className, ...rest}) => {
     <Root className={rootStyles} {...rest}>
       {children}
     </Root>
-  )
-}
+  );
+};
 
 export default Heading;

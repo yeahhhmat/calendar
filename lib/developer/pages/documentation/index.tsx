@@ -13,6 +13,6 @@ const Documentation = () => (
   <AppBackground>
     <Hero />
   </AppBackground>
-)
+);
 
 export default Documentation;

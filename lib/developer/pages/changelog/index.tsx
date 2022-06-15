@@ -13,6 +13,6 @@ const ChangeLog = () => (
   <AppBackground>
     <Hero />
   </AppBackground>
-)
+);
 
 export default ChangeLog;

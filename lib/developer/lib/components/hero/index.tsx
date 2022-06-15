@@ -1,13 +1,13 @@
-import clsx from "clsx"
-import Heading from "../heading";
+import clsx from 'clsx';
+import Heading from '../heading';
 
 const Prose = ({root, className, children, ...rest}) => {
   const Root = root ? root : 'div';
   return (
-    <Root className={clsx("prose", className && className)} {...rest}>
+    <Root className={clsx('prose', className && className)} {...rest}>
       {children}
     </Root>
-  )
+  );
 };
 
 const Hero = () => {
@@ -83,7 +83,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Hero;

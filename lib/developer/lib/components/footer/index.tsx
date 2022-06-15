@@ -1,4 +1,4 @@
-import CustomComponent from "../customcomponent";
+import CustomComponent from '../customcomponent';
 const Footer = () => {
   return (
     <CustomComponent root="footer" className="footer p-10 bg-base-200 text-base-content">
@@ -22,9 +22,9 @@ const Footer = () => {
       </div>
       <div>
         <span className="footer-title">Get Involved</span>
-        <a className="link link-hover" href="https://github.com/yeahhhmat/calendar" target="_blank">GitHub</a>
-        <a className="link link-hover" href="https://github.com/yeahhhmat/calendar/issues/new" target="_blank">Open An Issue</a>
-        <a className="link link-hover" href="https://github.com/yeahhhmat/calendar/issues" target="_blank">Contribute</a>
+        <a className="link link-hover" href="https://github.com/yeahhhmat/calendar" target="_blank" rel="noreferrer" >GitHub</a>
+        <a className="link link-hover" href="https://github.com/yeahhhmat/calendar/issues/new" target="_blank" rel="noreferrer" >Open An Issue</a>
+        <a className="link link-hover" href="https://github.com/yeahhhmat/calendar/issues" target="_blank" rel="noreferrer" >Contribute</a>
       </div>
       <div>
         <span className="footer-title">Company</span>
@@ -40,7 +40,7 @@ const Footer = () => {
         <a className="link link-hover">Cookie policy</a>
       </div>
     </CustomComponent>
-  )
-}
+  );
+};
 
 export default Footer;

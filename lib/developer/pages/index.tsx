@@ -13,6 +13,6 @@ const Home = () => (
   <AppBackground>
     <Hero />
   </AppBackground>
-)
+);
 
 export default Home;

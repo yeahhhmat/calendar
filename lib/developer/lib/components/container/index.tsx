@@ -4,7 +4,7 @@ const Container = ({root, children, ...rest}) => {
     <Root className="container mx-auto" {...rest}>
       {children}
     </Root>
-  )
-}
+  );
+};
 
 export default Container;

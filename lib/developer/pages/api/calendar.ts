@@ -1,17 +1,18 @@
-import Cors from 'cors'
-import initMiddleware from '../../lib/init-middleware'
+import type {NextApiRequest, NextApiResponse} from 'next';
+import Cors from 'cors';
+import initMiddleware from '../../lib/init-middleware';
 import {calendar} from '@whilethiscompiles/calendar';
 
 const cors = initMiddleware(
   Cors({methods: ['GET']})
 );
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Run cors
   await cors(req, res);
 
   if(req.query.year && req.query.year.length > 0 && req.query.year.length <= 5) {
-    return res.json({ data: calendar(req.query.year) });
+    return res.json({data: calendar(req.query.year)});
   }
-  return res.status(400).json({ error: 'Something went wrong - Invalid query params' }) 
+  return res.status(400).json({error: 'Something went wrong - Invalid query params'}); 
 }

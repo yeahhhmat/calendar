@@ -6,7 +6,7 @@ const CustomComponent = ({root, children, className = '', ...rest}) => {
     <Root className={className} {...rest}>
       {children}
     </Root>
-  )
-}
+  );
+};
 
 export default CustomComponent;

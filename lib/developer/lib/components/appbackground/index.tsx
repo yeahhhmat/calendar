@@ -1,4 +1,4 @@
-import {join} from "lodash";
+import {join} from 'lodash';
 
 const AppBackground = ({children, ...rest}) => {
   const Root = 'div';
@@ -11,6 +11,6 @@ const AppBackground = ({children, ...rest}) => {
       {children}
     </Root>
   );
-}
+};
 
 export default AppBackground;
