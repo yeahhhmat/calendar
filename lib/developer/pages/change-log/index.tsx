@@ -7,7 +7,7 @@ import {
   Hero,
   NavBar,
   Text
-} from '../../lib/componentsnts';
+} from '../../lib/components';
 
 const ChangeLog = () => (
   <AppBackground>

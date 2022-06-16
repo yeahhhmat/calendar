@@ -6,7 +6,7 @@ import CustomComponent from './customcomponent';
 import Footer from './footer';
 import NavBar from './navbar';
 import Hero from './hero';
-
+import Prose from './prose';
 export {
   AppBackground,
   Heading,
@@ -15,5 +15,6 @@ export {
   CustomComponent,
   Footer,
   NavBar,
-  Hero
+  Hero,
+  Prose
 };

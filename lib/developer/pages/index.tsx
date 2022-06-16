@@ -6,13 +6,22 @@ import {
   Heading,
   Hero,
   NavBar,
-  Text
+  Text,
+  Prose
 } from '../lib/components';
+
+import {HomeContent, LandingContent, LeftSideNavContent} from '../lib/content';
 
 const Home = () => (
   <AppBackground>
-    <Hero />
+    <LandingContent />
+    <NavBar />
+    <Container
+      leftSideNav={<LeftSideNavContent />}
+      content={<HomeContent />}
+    />
     <Footer />
+
   </AppBackground>
 );
 

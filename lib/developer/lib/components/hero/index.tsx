@@ -57,7 +57,7 @@ const Hero = () => {
         <Prose>
           <p>At some point itd be awesome to incorporate some UI Calendar Components in such a way that we could be presentable as a alternative to other popular open source services. We&apos;ve got a long way to go before that! </p>
         </Prose>
-        <Prose>
+        {/* <Prose>
           <Heading root="h2">Step 1. Install the SDK</Heading>
           <p>The package lives in the <a href="https://www.npmjs.com/package/@whilethiscompiles/calendar">NPM Registry</a>, and can be installed via <code>npm</code> or <code>yarn</code> as preferred.</p>
         </Prose>
@@ -71,7 +71,7 @@ const Hero = () => {
           <pre data-prefix={1}><code>{'import {calendar} from \'@whilethiscompiles/calendar\''}</code></pre>
           <pre data-prefix={2}><code>{' '}</code></pre>
           <pre data-prefix={3}><code>var demo = calendar(1999)</code></pre>
-        </div>
+        </div> */}
       </div>
     </div>
   );
