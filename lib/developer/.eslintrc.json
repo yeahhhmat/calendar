@@ -5,6 +5,14 @@
     "indent": ["error", 2],
     "semi": ["error", "always"],
     "object-curly-spacing": ["error", "never"],
-    "array-bracket-spacing": ["error", "never"]
+    "array-bracket-spacing": ["error", "never"],
+    "eol-last": ["error", "always"],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 0 }],
+    "no-trailing-spaces": "error",
+    "react/boolean-prop-naming": ["error", { "propTypeNames": ["bool", "mutuallyExclusiveTrueProps"], "message": "bool must use 'is*' or 'has*' " }],
+    "react/button-has-type": ["error"],
+    "react/default-props-match-prop-types": ["error"],
+    "react/destructuring-assignment": ["error"],
+    "@next/next/no-img-element": ["off"]
   }
 }

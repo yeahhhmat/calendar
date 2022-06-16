@@ -12,6 +12,7 @@ import {
 const Home = () => (
   <AppBackground>
     <Hero />
+    <Footer />
   </AppBackground>
 );
 

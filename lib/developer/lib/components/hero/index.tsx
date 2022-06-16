@@ -1,14 +1,5 @@
-import clsx from 'clsx';
 import Heading from '../heading';
-
-const Prose = ({root, className, children, ...rest}) => {
-  const Root = root ? root : 'div';
-  return (
-    <Root className={clsx('prose', className && className)} {...rest}>
-      {children}
-    </Root>
-  );
-};
+import Prose from '../prose';
 
 const Hero = () => {
   return (
@@ -34,11 +25,11 @@ const Hero = () => {
         </Prose>
         {/* mb should match img height */}
         <div className="relative mb-24">
-          <img src="./construction-unicode-1F3D7.svg" className="h-24 w-24 absolute right-2" />
+          <img alt="under construction" src="./construction-unicode-1F3D7.svg" className="h-24 w-24 absolute right-2" />
         </div>
         <Prose>
           <Heading root="h2">Road Map</Heading>
-          <p>Here's the current road map. Working Toward's A Localized Tomorrow.</p>
+          <p>Here&apos;s the current road map. Working Toward&apos;s A Localized Tomorrow.</p>
         </Prose>
         <ul className="steps steps-vertical whitespace-nowrap">
           <li data-content="✓" className="step step-primary">
@@ -64,7 +55,7 @@ const Hero = () => {
           </li>
         </ul>
         <Prose>
-          <p>At some point it'd be awesome to incorporate some UI Calendar Components in such a way that we could be presentable as a alternative to other popular open source services. We've got a long way to go before that! </p>          
+          <p>At some point itd be awesome to incorporate some UI Calendar Components in such a way that we could be presentable as a alternative to other popular open source services. We&apos;ve got a long way to go before that! </p>
         </Prose>
         <Prose>
           <Heading root="h2">Step 1. Install the SDK</Heading>

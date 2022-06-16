@@ -14,5 +14,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if(req.query.year && req.query.year.length > 0 && req.query.year.length <= 5) {
     return res.json({data: calendar(req.query.year)});
   }
-  return res.status(400).json({error: 'Something went wrong - Invalid query params'}); 
+  return res.status(400).json({error: 'Something went wrong - Invalid query params'});
 }

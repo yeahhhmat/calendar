@@ -1,8 +1,10 @@
 {
   "cSpell.words": [
+    "appbackground",
+    "clsx",
+    "customcomponent",
     "daisyui",
     "tailwindcss",
-    "whilethiscompiles",
-    "clsx"
+    "whilethiscompiles"
   ]
 }

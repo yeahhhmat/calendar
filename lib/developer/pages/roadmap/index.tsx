@@ -11,7 +11,7 @@ import {
 
 const RoadMap = () => (
   <AppBackground>
-    <Hero /> 
+    <Hero />
   </AppBackground>
 );
 

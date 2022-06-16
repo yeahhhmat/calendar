@@ -1,6 +1,12 @@
+/** Dependencies */
+import * as React from 'react';
 import {join} from 'lodash';
 
-const AppBackground = ({children, ...rest}) => {
+/** Interfaces */
+import {AppBackgroundProps} from './appbackground.interfaces';
+
+/** Component */
+const AppBackground: React.FC<AppBackgroundProps> =  ({children, ...rest}) => {
   const Root = 'div';
   const rootStyles = join([
     // 'bg-gray-50 dark:bg-gray-800', /** bg-color */
