@@ -1,12 +1,12 @@
-import Link from "next/link";
-import { Prose } from "../../components";
+import Link from 'next/link';
+import {Prose} from '../../components';
 
 const LandingHeroContent = () => (
   <div className="hero min-h-screen">
     <div className="hero-content">
       <div>
         <div className="flex items-baseline">
-          <h1 className="text-5xl font-bold pr-2">Here's A Calendar!</h1>
+          <h1 className="text-5xl font-bold pr-2">Here&apos;s A Calendar!</h1>
           <img src="./cat-roomba.gif" alt="whilethiscompiles"/>
         </div>
         <Prose>
@@ -18,13 +18,13 @@ const LandingHeroContent = () => (
           <pre data-prefix={'%'}><code>npm i @whilethiscompiles/calendar</code></pre>
         </div>
         <Link href="/home">
-          <button className="btn btn-primary">Read The Docs</button>
+          <button className="btn btn-primary" type="button">Read The Docs</button>
         </Link>
 
       </div>
     </div>
   </div>
 
-)
+);
 
 export default LandingHeroContent;

@@ -7,10 +7,10 @@ import {
 const HomeContent = () => (
   <>
     <Prose>
-      <Heading root="h1">Getting Started</Heading>     
+      <Heading root="h1">Getting Started</Heading>
       <Text>Getting started is easy as 1, 2, 3. The steps below we walk us through how we can implement the <code>@whilethiscompiles/calendar</code> via SDK. It should be noted there is an active endpoint available should HTTP be preferred.</Text>
     </Prose>
-    
+
     <div className="alert alert-info shadow-lg my-6">
       <div className='flex items-start'>
         <svg
@@ -26,7 +26,7 @@ const HomeContent = () => (
             d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span>Heads up! We're in BETA under active development. To stay up to date with the latest, subscribe to our <a href="https://github.com/yeahhhmat/calendar/watchers" target="_blank" rel="noreferrer" className='link'>watch list in GitHub</a>.</span>
+        <span>Heads up! We&apos;re in BETA under active development. To stay up to date with the latest, subscribe to our <a href="https://github.com/yeahhhmat/calendar/watchers" target="_blank" rel="noreferrer" className='link'>watch list in GitHub</a>.</span>
       </div>
     </div>
     <Prose>

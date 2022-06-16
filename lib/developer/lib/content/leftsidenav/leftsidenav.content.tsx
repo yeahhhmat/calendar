@@ -7,7 +7,6 @@ const LeftSideNavContent = () => {
   return (
     <>
       <Prose className="pb-8">
-        <Heading root="h2">Navigation</Heading>
         <hr />
       </Prose>
       <ul className="menu">
