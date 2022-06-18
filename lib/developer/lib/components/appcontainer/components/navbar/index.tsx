@@ -1,9 +1,13 @@
 import {BrandGithub, Menu} from 'tabler-icons-react';
 import {useStore} from '../../../../state';
 const NavBar = () => {
+  // Extract State //
+  const mobileNavStatus = useStore((state) => state.mobileNav);
   const openMobileNav = useStore((state) => state.openMobileNav);
+  const closeMobileNav = useStore((state) => state.closeMobileNav);
+  
   const handleMenuClick = () => {
-    openMobileNav(true)
+    mobileNavStatus.isClosed ? openMobileNav() : closeMobileNav()
   }
 
   return (

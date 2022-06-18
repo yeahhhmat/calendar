@@ -3,6 +3,6 @@ export type StateProps = {
     isOpen: boolean;
     isClosed: boolean;
   }
-  closeMobileNav: (arg: boolean) => void,
-  openMobileNav: (arg: boolean) => void,
+  closeMobileNav: () => void,
+  openMobileNav: () => void,
 }

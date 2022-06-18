@@ -1,15 +1,19 @@
 import create from 'zustand';
 import {StateProps} from './state.interfaces';
 
-export const useStore = create<StateProps>((set) => ({
+const defaultState = {
   mobileNav: {
-    isOpen: false,
-    isClosed: true
-  },
-  closeMobileNav: (arg: boolean) => set((state) => ({
-    mobileNav: {isOpen: !arg, isClosed: arg},
+    isOpen: Boolean(false),
+    isClosed: Boolean(true)
+  }
+};
+
+export const useStore = create<StateProps>((set) => ({
+  ...defaultState,
+  closeMobileNav: () => set(() => ({
+    mobileNav: {isOpen: Boolean(false), isClosed: Boolean(true)},
   })),
-  openMobileNav: (arg: boolean) => set((state) => ({
-    mobileNav: {isOpen: arg, isClosed: !arg},
+  openMobileNav: () => set(() => ({
+    mobileNav: {isOpen: Boolean(true), isClosed: Boolean(false)},
   }))
 }));
