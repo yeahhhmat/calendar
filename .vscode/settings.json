@@ -1,12 +1,14 @@
 {
   "cSpell.words": [
     "appbackground",
+    "appcontainer",
     "clsx",
     "customcomponent",
     "daisyui",
     "leftsidenav",
     "tabler",
     "tailwindcss",
-    "whilethiscompiles"
+    "whilethiscompiles",
+    "zustand"
   ]
 }

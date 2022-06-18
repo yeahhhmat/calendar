@@ -1,13 +1,4 @@
-import {
-  AppBackground,
-  Container,
-  CustomComponent,
-  Footer,
-  Heading,
-  Hero,
-  NavBar,
-  Text
-} from '../../lib/components';
+import {AppBackground,Hero} from '../../lib/components';
 
 const RoadMap = () => (
   <AppBackground>
