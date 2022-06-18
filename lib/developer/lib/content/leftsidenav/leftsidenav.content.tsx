@@ -5,10 +5,7 @@ import {Heading,Prose} from '../../components';
 /** Default Component */
 const LeftSideNavContent = () => {
   return (
-    <div className=''>
-      <Prose className="pb-8">
-        <hr />
-      </Prose>
+    <div className='pt-12'>
       <ul className="menu">
         <li>
           <Link href={'/'}>

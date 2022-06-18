@@ -13,6 +13,7 @@ function App() {
     </div>
   );
 }
+
 // Hook
 export function useWindowSize(): Size {
   // Initialize state with undefined width/height so server and client renders match

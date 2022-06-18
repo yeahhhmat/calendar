@@ -4,8 +4,9 @@ import {StateProps} from './state.interfaces';
 const defaultState = {
   mobileNav: {
     isOpen: Boolean(false),
-    isClosed: Boolean(true)
-  }
+    isClosed: Boolean(true),    
+  },
+  isSafeClick: false,
 };
 
 export const useStore = create<StateProps>((set) => ({
@@ -15,5 +16,8 @@ export const useStore = create<StateProps>((set) => ({
   })),
   openMobileNav: () => set(() => ({
     mobileNav: {isOpen: Boolean(true), isClosed: Boolean(false)},
+  })),
+  setSafeClick: (arg) => set(() => ({
+    isSafeClick: arg
   }))
 }));

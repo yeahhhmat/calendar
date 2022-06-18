@@ -2,7 +2,7 @@ import CustomComponent from '../../../customcomponent';
 import Prose from '../../../prose';
 const Footer = () => {
   return (
-    <CustomComponent root="footer" className="footer p-10 bg-base-200 text-base-content">
+    <CustomComponent root="footer" className="footer p-10 bg-base-200 text-base-content z-40 relative">
       <div>
         <img className='h-24 w-24' src='./calendar-unicode-1F4C5.svg' alt='logo'/>
         <Prose>
