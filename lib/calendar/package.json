@@ -12,14 +12,11 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@types/node": "^17.0.38",
-    "@typescript-eslint/eslint-plugin": "^5.27.0",
-    "@typescript-eslint/parser": "^5.27.0",
-    "eslint": "^8.16.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.2",
-    "typescript": "^4.7.2"
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.18.0",
+    "typescript": "^4.7.4"
   },
   "keywords": ["dayjs","calendar","nodejs","opensource"]
 }
