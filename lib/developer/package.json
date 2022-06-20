@@ -23,6 +23,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-haiku": "^2.0.1",
+    "react-spring": "^9.4.5",
     "tabler-icons-react": "^1.48.1",
     "typescript": "^4.7.3",
     "zustand": "^4.0.0-rc.1"

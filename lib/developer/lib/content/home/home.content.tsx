@@ -37,13 +37,19 @@ const HomeContent = () => (
       <pre data-prefix={'%'}><code>npm i @whilethiscompiles/calendar</code></pre>
     </div>
     <Prose>
-      <Heading root="h2">Step 2. Implement</Heading>
+      <Heading root="h2">Step 2. Import Module & Implement</Heading>
+      <p>Use the following example to return an object of dates for the full 12 months of the calendar year, 1999.</p>
     </Prose>
     <div className="mockup-code my-6">
       <pre data-prefix={1}><code>{'import {calendar} from \'@whilethiscompiles/calendar\''}</code></pre>
       <pre data-prefix={2}><code>{' '}</code></pre>
       <pre data-prefix={3}><code>var demo = calendar(1999)</code></pre>
     </div>
+    <Prose>
+      <p>If using ES6, we can <i>import</i> the calendar method using the example demonstrated above. Alternatively, if using CommonJS, we can replace the import with a <i>require</i> statement, while still extracting the <code>calendar</code> from its module.</p>
+      <Heading root="h2">Step 3. Modify To Suite Your Needs</Heading>
+      <p>There are immediate plans to support features such as Date localization and ranges.</p>
+    </Prose>
   </>
 );
 

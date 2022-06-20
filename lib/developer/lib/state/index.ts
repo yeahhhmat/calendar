@@ -4,7 +4,7 @@ import {StateProps} from './state.interfaces';
 const defaultState = {
   mobileNav: {
     isOpen: Boolean(false),
-    isClosed: Boolean(true),    
+    isClosed: Boolean(true),
   },
   isSafeClick: false,
 };
