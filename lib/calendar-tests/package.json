@@ -8,6 +8,8 @@
   ],
   "scripts": {
     "test": "mocha",
+    "local:build-calendar": "cd ../calendar && npm run build",
+    "local:test": "npm run local:build-calendar && npm t",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },

@@ -10,6 +10,7 @@ A user friendly SDK & API that returns a list of calendar dates for a given year
 - [Usage Via HTTP](#usage-via-http)
 - [Contributing](#contributing)
 - [This repo](#this-repo)
+
 ### Usage Via Nodejs
 
 ```shell
@@ -29,12 +30,9 @@ A public endpoint is available via the GET method & accepts 1 query parameter `y
 https://calendar.whilethiscompiles.com/api/calendar?year=YYYY
 ```
 
-## Contributing
-We glady accecpt new proposals. 🙂 If you are looking to pick up and existing issue, we use a ticket based workflow. Just try to let us know if you intend on picking up a ticket so we don't overlap efforts. 
+## Parameters
 
-- [Open Issues](https://github.com/yeahmat/calendar/issues?q=is%3Aissue+is%3Aopen)
-- [Planning](https://github.com/yeahmat/calendar/projects/1)
-- [Internal Docs](https://github.com/yeahmat/calendar/wiki)
+- `locale` - 
 
 ### This repo
 - `/lib/calendar` - NPM Package

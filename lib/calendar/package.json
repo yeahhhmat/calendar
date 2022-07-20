@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run lint:fix && tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },

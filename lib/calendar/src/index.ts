@@ -1,8 +1,9 @@
-/** Dependencies */
+/** dependencies */
 import dayjs from 'dayjs';
 import localeData from 'dayjs/plugin/localeData';
+import {reduce, isEmpty} from 'lodash';
 
-/** Configurations */
+/** configurations */
 dayjs.extend(localeData);
 dayjs().format();
 
@@ -15,6 +16,8 @@ import {
   formatResponseProps
 } from './index.interfaces';
 
+import {isValidYear} from './calendar/isValidYear';
+export {isValidYear};
 /** Constants */
 export const months: string[] = dayjs.months().reverse(); // https://day.js.org/docs/en/i18n/listing-months-weekdays
 
@@ -23,45 +26,71 @@ export const formatDate = ({year, months, current, day = '01'}: formatDateInterf
   const month = 12 - months.indexOf(current);
   const formattedDay = String(day).padStart(2, '0');
   const formattedDate = new Date(`${year}-${month}-${formattedDay}`);
-  return new Intl.DateTimeFormat(locale && locale.length > 0 ? locale : 'en-US').format(formattedDate);
+
+  if(!isEmpty(locale)) {
+    return new Intl.DateTimeFormat(locale).format(formattedDate);
+  }
+
+  return new Intl.DateTimeFormat('en-US').format(formattedDate);
 };
 
-export const getDaysInMonth = ({year, months, current}: getDaysInMonthInterface): number => (
-  dayjs(formatDate({year, months, current})).daysInMonth()
-);
+export const getDaysInMonth = (data: getDaysInMonthInterface): number => {
+  const {year, months, current} = data;
 
-export const formatResponse = ({collector, current, months, year}: formatResponseProps, {locale}): formatResponseInterface => {
-  /** Constants */
+  return (
+    dayjs(formatDate({year, months, current})).daysInMonth()
+  );
+};
+
+type calendarInterface = formatResponseInterface | formatErrorResponseInterface;
+
+export const calendar = (
+  year: number | string,
+  options: {
+    locale? : string | null,
+    monthFormat?: 'M' | 'MM' | 'MMM' | 'MMMM' | null
+  }
+): calendarInterface => {
+  /** error boundary */
+  const validYear = isValidYear(year);
+  if (typeof validYear !== 'boolean') {
+    return validYear;
+  }
+
+  const collectByMonth = (
+    collector: formatResponseInterface,
+    current: string
+  ) => {
+    const data = {
+      year: String(year),
+      months: dayjs.months(),
+      current,
+      collector
+    };
+    return (
+      formatCollectByMonthResponse(data, options)
+    );
+  };
+  return reduce(months, collectByMonth, {});
+};
+
+export const formatCollectByMonthResponse = (data: formatResponseProps, options): formatResponseInterface => {
+  const {collector, current, months, year} = data;
+
+  /** constants */
   const daysInMonth: number = getDaysInMonth({year, months, current});
   const daysOfMonthAsArray: number[] = [...new Array(daysInMonth).keys()];
 
-  const formatInnerReducerCallback = (innerCollector: commonKeyValueInterface, innerCurrent: number): commonKeyValueInterface => ({
-    [String(innerCurrent + 1)]: formatDate({year, months, current, day: String(innerCurrent + 1)}, locale),
+  const formatDaysInMonth = (innerCollector: commonKeyValueInterface, innerCurrent: number): commonKeyValueInterface => ({
+    [String(innerCurrent + 1)]: formatDate({year, months, current, day: String(innerCurrent + 1)}, options),
     ...innerCollector,
   });
 
   return {
     [current.toLowerCase()]: {
       count: daysInMonth,
-      collection: daysOfMonthAsArray.reduce(formatInnerReducerCallback, {})
+      collection: reduce(daysOfMonthAsArray, formatDaysInMonth, {})
     },
     ...collector,
   };
-};
-
-export const calendar = (year: number | string, options: {locale? : string | null}): formatResponseInterface | formatErrorResponseInterface => {
-  if(String(year).length !== 4 || isNaN(parseFloat(String(year)))) {
-    return ({
-      'error': {
-        'body': "invalid argument passed to `calendar('YYYY')`"
-      }
-    });
-  }
-  const locale = (options && options.locale || null);
-
-  return months.reduce(
-    (collector: formatResponseInterface, current: string) =>
-      formatResponse({year: String(year), months, current, collector}, {locale}),
-    {}
-  );
 };
