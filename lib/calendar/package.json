@@ -3,9 +3,10 @@
   "version": "0.0.5",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "npm run lint:fix && tsc",
+    "build": "npm run lint && tsc",
+    "build:dev": "tsc",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint ./src --fix"
   },
   "dependencies": {
     "dayjs": "^1.11.2",

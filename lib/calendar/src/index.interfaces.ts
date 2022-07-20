@@ -30,10 +30,3 @@ export type formatErrorResponseInterface = {
     body: string;
   };
 }
-
-export type formatDateInterface = {
-  year: string;
-  months: string[];
-  current: string;
-  day?: string;
-}

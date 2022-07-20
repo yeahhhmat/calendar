@@ -1,7 +1,7 @@
 /** dependencies */
 import dayjs from 'dayjs';
 import localeData from 'dayjs/plugin/localeData';
-import {reduce, isEmpty} from 'lodash';
+import {reduce} from 'lodash';
 
 /** configurations */
 dayjs.extend(localeData);
@@ -12,33 +12,20 @@ import {
   commonKeyValueInterface,
   formatResponseInterface,
   formatErrorResponseInterface,
-  formatDateInterface,
   formatResponseProps
 } from './index.interfaces';
 
-import {isValidYear} from './calendar/isValidYear';
-export {isValidYear};
+import {isValidYear, buildDateString} from './calendar/utilities';
+export {isValidYear, buildDateString};
+
 /** Constants */
 export const months: string[] = dayjs.months().reverse(); // https://day.js.org/docs/en/i18n/listing-months-weekdays
-
-/** Methods */
-export const formatDate = ({year, months, current, day = '01'}: formatDateInterface, locale = ''): string => {
-  const month = 12 - months.indexOf(current);
-  const formattedDay = String(day).padStart(2, '0');
-  const formattedDate = new Date(`${year}-${month}-${formattedDay}`);
-
-  if(!isEmpty(locale)) {
-    return new Intl.DateTimeFormat(locale).format(formattedDate);
-  }
-
-  return new Intl.DateTimeFormat('en-US').format(formattedDate);
-};
 
 export const getDaysInMonth = (data: getDaysInMonthInterface): number => {
   const {year, months, current} = data;
 
   return (
-    dayjs(formatDate({year, months, current})).daysInMonth()
+    dayjs(buildDateString({year, months, current})).daysInMonth()
   );
 };
 
@@ -64,11 +51,10 @@ export const calendar = (
     const data = {
       year: String(year),
       months: dayjs.months(),
-      current,
-      collector
     };
+
     return (
-      formatCollectByMonthResponse(data, options)
+      formatCollectByMonthResponse({...data, collector, current}, options)
     );
   };
   return reduce(months, collectByMonth, {});
@@ -82,7 +68,7 @@ export const formatCollectByMonthResponse = (data: formatResponseProps, options)
   const daysOfMonthAsArray: number[] = [...new Array(daysInMonth).keys()];
 
   const formatDaysInMonth = (innerCollector: commonKeyValueInterface, innerCurrent: number): commonKeyValueInterface => ({
-    [String(innerCurrent + 1)]: formatDate({year, months, current, day: String(innerCurrent + 1)}, options),
+    [String(innerCurrent + 1)]: buildDateString({year, months, current, day: String(innerCurrent + 1)}, options),
     ...innerCollector,
   });
 

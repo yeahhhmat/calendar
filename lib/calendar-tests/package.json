@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "comments": [
+    "notice: future release testing",
     "mocha & chai test suites for ../calendar/*",
-    "imported as a node_module for end-user testing"
+    "imported via relative path for future release testing"
   ],
   "scripts": {
     "test": "mocha",
-    "local:build-calendar": "cd ../calendar && npm run build",
+    "local:build-calendar": "cd ../calendar && npm run build:dev",
     "local:test": "npm run local:build-calendar && npm t",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
